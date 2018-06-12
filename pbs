@@ -1,0 +1,22 @@
+#PBS -S /bin/bash
+#PBS -N test01
+#PBS -l nodes=1
+#PBS -m b
+#PBS -m e
+#PBS -m a
+#PBS -o outfile
+#PBS -e errfile
+#PBS -l walltime=200:30:00
+##PBS -q verylong
+
+echo "begin time"; date
+echo "job run on :"; hostname
+echo "with job id:" $PBS_JOBID
+
+##do your job
+## The comment of the job
+cd $PBS_O_WORKDIR
+./spic1d
+
+
+echo "end time"; date
